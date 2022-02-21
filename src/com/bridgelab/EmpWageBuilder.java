@@ -1,16 +1,16 @@
 package com.bridgelab;
 
-// uc2
+// uc3
 
 /*
-calculate daily employee wage
+Add Part time Employee & Wage
  */
 
 
 public class EmpWageBuilder {
 
-
     public static final int IS_PRESENT = 1;
+    public static final int IS_PART_TIME = 2;
     public static final int SALARY_PER_HR = 20;
 
     public static void employeeAttendace() {
@@ -19,27 +19,29 @@ public class EmpWageBuilder {
 
         int Working_Hr = 0;
 
-        /*
-        checking condition
-         */
-        
         if (empCheck == IS_PRESENT) {
-
             Working_Hr = 8;
 
         }
 
+        else if (empCheck == IS_PART_TIME) {
+            Working_Hr = 4;
+
+        }
+        else
+        {
+            Working_Hr = 0;
+        }
+
         double Salary = Working_Hr * SALARY_PER_HR;
 
-        System.out.println("Employee Salary is = " + Salary + "  Doller");
+        System.out.println("Emplyee Salary is = " + Salary + "  Doller");
 
     }
 
+    public static void main(String[] args) {
 
-    public static void main(String[] args)
-    {
-        EmpWageBuilder.employeeAttendace();  //main method
+        EmpWageBuilder.employeeAttendace();     //main method
     }
 
 }
-
